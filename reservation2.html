@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>호텔 예약 서비스</title>
+</head>
+<style>
+
+body {font-family: 'NanumBarunGothic', 'serif';}
+
+div{
+    border : 2px dotted #A9BCF5;
+    background-color : #A9BCF5;
+	border-radius : 20px 40px 60px 80px;
+	margin: 10px auto;
+	width: 70%;
+	padding: 10px;
+}
+
+
+hr {
+	border: none;
+	border-top: 2px solid #A9F5F2;
+	color: #A9F5F2;
+	height: 3px;
+	width: 90%;
+	margin: auto;
+}
+
+.div1{
+
+   text-align : center;
+   border : none;
+
+}
+
+
+</style>
+<script>
+function oneCheckbox(a){
+    var obj = document.getElementsByName("checkbox1");
+    for(var i=0; i<obj.length; i++){
+        if(obj[i] != a){
+            obj[i].checked = false;
+        }
+    }
+}
+</script>
+<body>
+<div>
+<h1 style="text-align : center">호텔 예약 서비스</h1>
+<hr>
+<br>
+<form name="sendForm" method="POST" action="/sedu/jspexam/reservation.jsp" style = "margin-left : 50px">
+예약자 명 : <input type="text" placeholder="성함을 입력하세요" required name="name"><br>
+예약 암호 : <input type="password" required name="passwd" placeholder="암호를 입력하세요"><br>
+<br>
+&#60;룸선택&#62;<br> 
+<input type="checkbox" name="checkbox1" value="싱글 룸(single room)" onclick="oneCheckbox(this)"> 싱글 룸(single room)
+<input type="checkbox" name="checkbox1" value="더블 룸(double room)" onclick="oneCheckbox(this)"> 더블 룸(double room)
+<input type="checkbox" name="checkbox1" value="트윈 룸(twin room)3" onclick="oneCheckbox(this)">트윈 룸(twin room)
+<br>
+<input type="checkbox" name="checkbox1" value="트리플 룸(triple room)" onclick="oneCheckbox(this)">트리플 룸(triple room)
+<input type="checkbox" name="checkbox1" value="스위트 룸(suite room)" onclick="oneCheckbox(this)">스위트 룸(suite room)
+<br>
+<br>
+&#60;추가 요청 사항&#62;<br>
+<input type="checkbox" name="subject" value="웰컴 드링크(welcome drink)">웰컴 드링크(welcome drink)
+<input type="checkbox" name="subject" value="미니 바(mini bar)">미니 바(mini bar)<br>
+<input type="checkbox" name="subject" value="세이프티 박스 (Safety Box)">세이프티 박스 (Safety Box)
+<input type="checkbox" name="subject" value="어메니티 (Amenity)">어메니티 (Amenity)<br>
+<br>
+&#60;예약 날짜&#62; <br>
+<input type="date" placeholder="연도-월-일" required name="date"><br>
+<br>
+<div class="div1">
+<input type="submit" value="예약">
+<input type="reset" value="재작성">
+</div>
+</form>
+</div>
+</body>
+</html>
